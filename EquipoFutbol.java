@@ -1,6 +1,6 @@
 abstract class EquipoFutbol {
-    //aca va el enum nombreEquipo
-    private String nombre;
+    // aca va el enum nombreEquipo
+    private String equipo;
     private String posicion;
     private NombreEquipo nombreEqui;
     private int numeroJugador;
@@ -13,9 +13,12 @@ abstract class EquipoFutbol {
     public abstract double calcularPases();
     public abstract double calcularSalarioTotal();
 
-    public EquipoFutbol(int numeroJugador, int numeroGoles, int numeroPases, int numeroAutoGoles,
-            double salarioJugador) {
+    public EquipoFutbol(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
+            int numeroPases, int numeroAutoGoles, double salarioJugador) {
         super();
+        this.equipo = equipo;
+        this.posicion = posicion;
+        this.nombreEqui = nombreEqui;
         this.numeroJugador = numeroJugador;
         this.numeroGoles = numeroGoles;
         this.numeroPases = numeroPases;
@@ -71,6 +74,27 @@ abstract class EquipoFutbol {
         this.nombreEqui = nombreEqui;
     }
 
-    
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+    }
+
+    @Override
+    public String toString() {
+        return "EquipoFutbol [equipo=" + equipo + ", posicion=" + posicion + ", nombreEqui=" + nombreEqui
+                + ", numeroJugador=" + numeroJugador + ", numeroGoles=" + numeroGoles + ", numeroPases=" + numeroPases
+                + ", numeroAutoGoles=" + numeroAutoGoles + ", salarioJugador=" + salarioJugador + "]";
+    }
 
 }

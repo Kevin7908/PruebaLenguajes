@@ -9,8 +9,21 @@ public class GestionarEquipos {
         equipos = new ArrayList<>();
     }
 
-    public void anadirEquipos(EquipoFutbol equipo){
-        equipos.add(equipo);
+    public void anadirEquipos(EquipoFutbol equipo,int numJu, String pos, String nomEqui ){
+        int c = 0;
+        for (EquipoFutbol e : equipos) {
+            if (nomEqui ==e.getEquipo() && pos == e.getPosicion() && numJu == e.getNumeroJugador()){
+                c=1;
+                break;
+            }else{
+                c=2;
+            }
+        }
+
+        if (c==2) {
+            equipos.add(equipo);
+        }
+        
     }
 
     public void mostrarEquipos(){
@@ -27,14 +40,13 @@ public class GestionarEquipos {
         equipos.remove(indice);
     }
 
-    // public void buscarEquipo(String nomEqui){
-    //     NombreEquipo n = NombreEquipo.BARCELONA;
-    //     for (EquipoFutbol e: equipos){
-    //         if (nomEqui == e.getEquipo()) {
-    //             System.out.println(e);
-    //         }
-    //     }
-    // }
+    public void buscarJugador(String nomEqui, String pos, int numJu){
+        for (EquipoFutbol e: equipos){
+            if (nomEqui == e.getEquipo() && pos == e.getPosicion() && numJu == e.getNumeroJugador()) {
+                System.out.println(e);
+            }
+        }
+    }
 
 
 }
