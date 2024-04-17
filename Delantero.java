@@ -3,19 +3,16 @@ public class Delantero extends EquipoFutbol {
 
     private String desmarque;
     private String remateDePrimera;
-    private int golesAnotados;
+    private int golesAnotadosPartido;
     private String presicionTiros;
 
-    public Delantero(String equipo, String posicion, NombreEquipo nombreEqui,
-            int numeroJugador, int numeroGoles,
-            int numeroPases, int numeroAutoGoles, double salarioJugador,
-            String desmarque, String remateDePrimera,
-            int golesAnotados, String presicionTiros) {
-        super(equipo, posicion, nombreEqui, numeroJugador, numeroGoles,
-                numeroPases, numeroAutoGoles, salarioJugador);
+    public Delantero(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
+            int numeroPases, int numeroAutoGoles, double salarioJugador, String desmarque,
+            String remateDePrimera, int golesAnotadosPartido, String presicionTiros) {
+        super(equipo, posicion, nombreEqui, numeroJugador, numeroGoles, numeroPases, numeroAutoGoles, salarioJugador);
         this.desmarque = desmarque;
         this.remateDePrimera = remateDePrimera;
-        this.golesAnotados = golesAnotados;
+        this.golesAnotadosPartido = golesAnotadosPartido;
         this.presicionTiros = presicionTiros;
     }
 
@@ -35,12 +32,12 @@ public class Delantero extends EquipoFutbol {
         this.remateDePrimera = remateDePrimera;
     }
 
-    public int getGolesAnotados() {
-        return golesAnotados;
+    public int getGolesAnotadosPartido() {
+        return golesAnotadosPartido;
     }
 
-    public void setGolesAnotados(int golesAnotados) {
-        this.golesAnotados = golesAnotados;
+    public void setGolesAnotadosPartido(int golesAnotadosPartido) {
+        this.golesAnotadosPartido = golesAnotadosPartido;
     }
 
     public String getPresicionTiros() {

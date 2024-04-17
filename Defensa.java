@@ -6,12 +6,12 @@ public class Defensa extends EquipoFutbol {
     private String tackle;
     private String marcajeAlHombre;
 
-    public Defensa(String equipo, String posicion, NombreEquipo nombreEqui,
-            int numeroJugador, int numeroGoles,
-            int numeroPases, int numeroAutoGoles, double salarioJugador, String liderazgoDefensivo, String posicion2,
-            String tackle, String marcajeAlHombre) {
-        super(equipo, posicion, nombreEqui, numeroJugador, numeroGoles,
-                numeroPases, numeroAutoGoles, salarioJugador);
+
+
+    public Defensa(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
+            int numeroPases, int numeroAutoGoles, double salarioJugador, 
+            String liderazgoDefensivo, String posicion2, String tackle, String marcajeAlHombre) {
+        super(equipo, posicion, nombreEqui, numeroJugador, numeroGoles, numeroPases, numeroAutoGoles, salarioJugador);
         this.liderazgoDefensivo = liderazgoDefensivo;
         posicion = posicion2;
         this.tackle = tackle;

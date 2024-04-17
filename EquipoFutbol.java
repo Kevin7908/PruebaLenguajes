@@ -8,6 +8,7 @@ abstract class EquipoFutbol {
     private int numeroPases;
     private int numeroAutoGoles;
     private double salarioJugador;
+    private CalidadJugador calidadJu;
 
     public abstract double calcularGoles();
     public abstract double calcularPases();
@@ -15,7 +16,6 @@ abstract class EquipoFutbol {
 
     public EquipoFutbol(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
             int numeroPases, int numeroAutoGoles, double salarioJugador) {
-        super();
         this.equipo = equipo;
         this.posicion = posicion;
         this.nombreEqui = nombreEqui;
@@ -24,6 +24,13 @@ abstract class EquipoFutbol {
         this.numeroPases = numeroPases;
         this.numeroAutoGoles = numeroAutoGoles;
         this.salarioJugador = salarioJugador;
+    }
+
+    public CalidadJugador getCalidadJu() {
+        return calidadJu;
+    }
+    public void setCalidadJu(CalidadJugador calidadJu) {
+        this.calidadJu = calidadJu;
     }
 
     public int getNumeroJugador() {

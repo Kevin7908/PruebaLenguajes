@@ -10,20 +10,14 @@ public class GestionarEquipos {
     }
 
     public void anadirEquipos(EquipoFutbol equipo,int numJu, String pos, String nomEqui ){
-        int c = 0;
         for (EquipoFutbol e : equipos) {
-            if (nomEqui ==e.getEquipo() && pos == e.getPosicion() && numJu == e.getNumeroJugador()){
-                c=1;
+            if (nomEqui ==e.getEquipo() && numJu == e.getNumeroJugador()){
+                System.out.println("El numero del jugador esta repetido");
                 break;
             }else{
-                c=2;
+                equipos.add(equipo);
             }
         }
-
-        if (c==2) {
-            equipos.add(equipo);
-        }
-        
     }
 
     public void mostrarEquipos(){
@@ -48,5 +42,9 @@ public class GestionarEquipos {
         }
     }
 
+    public void agregarEquiposDesdeGenerico(EquipoGenerico<? extends EquipoFutbol> equipoGenerico) {
+        //List<? extends EquipoFutbol> listaEquiposGenerico = equipoGenerico.obtenerListaEquipos();
+        equipos.addAll(equipoGenerico.obtenerListaEquipos());
+    }
 
 }
