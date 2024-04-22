@@ -65,4 +65,23 @@ public class Arquero extends EquipoFutbol {
         return 0;
     }
 
+    @Override
+    public String toString() {
+        return "╔══════════════════════════════════════════════\n" +
+               "║                Atributos del Arquero           \n" +
+               "╠══════════════════════════════════════════════\n" +
+               "║  Número de jugador: " + getNumeroJugador() + "\n" +
+               "║  Número de goles: " + getNumeroGoles() + "\n" +
+               "║  Número de pases: " + getNumeroPases() + "\n" +
+               "║  Número de autogoles: " + getNumeroAutoGoles() + "\n" +
+               "║  Salario del jugador: " + getSalarioJugador() + "\n" +
+               "║  Nombre del equipo: " + getNombreEqui() + "\n" +
+               "║  Posición: " + getPosicion() + "\n" +
+               "║  Goles tapados: " + golesTapados + "\n" +
+               "║  Agilidad de manos: " + agilidadManos + "\n" +
+               "║  Salida en falso: " + salidaEnFalso + "\n" +
+               "║  Juego aéreo defensivo: " + juegoAereoDefensivo + "\n" +
+               "╚══════════════════════════════════════════════";
+    }
+
 }

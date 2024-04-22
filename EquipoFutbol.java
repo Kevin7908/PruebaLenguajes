@@ -1,9 +1,9 @@
 abstract class EquipoFutbol {
     // aca va el enum nombreEquipo
-    private String equipo;
+    private String equipo = "";
     private String posicion;
     private NombreEquipo nombreEqui;
-    private int numeroJugador;
+    private int numeroJugador = -1;
     private int numeroGoles;
     private int numeroPases;
     private int numeroAutoGoles;
@@ -26,6 +26,12 @@ abstract class EquipoFutbol {
         this.salarioJugador = salarioJugador;
     }
 
+    public EquipoFutbol(String numeroJugador2, String equipo2) {
+		//TODO Auto-generated constructor stub
+	}
+	public EquipoFutbol(String equipo2) {
+        //TODO Auto-generated constructor stub
+    }
     public CalidadJugador getCalidadJu() {
         return calidadJu;
     }
