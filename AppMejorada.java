@@ -3,16 +3,20 @@ import java.util.Scanner;
 public class AppMejorada {
 
     public static void main(String[] args) {
+        //Hago una instancia de la funcion menu
         menu();
     }
 
     public static void menu() {
+        //creo un objeto de tipo Scanner para ingresar datos
         Scanner t = new Scanner(System.in);
+        //creo un objeto tipo Equipo Generico para ingresar datos
         EquipoGenerico<EquipoFutbol> equipoGenerico = new EquipoGenerico<>();
+        //creo un objeto de tipo Gestionar Equipos para ingresar datos
         GestionarEquipos gestionar = new GestionarEquipos();
-
+        //variable que inizializo en true para el ciclo 
         boolean continuar = true;
-
+// Ciclo while que se ejecutará mientras la variable continuar sea verdadera.
         while (continuar) {
             System.out.println("╔═══════════════════════════════════╗");
             System.out.println("║         Bienvenido al menu        ║");
@@ -25,10 +29,13 @@ public class AppMejorada {
             System.out.println("║  6. Salir                         ║");
             System.out.println("╚═══════════════════════════════════╝");
             System.out.print("Selecciona una opción: ");
+            // Lectura de la opción ingresada por el usuario.
             int opc = t.nextInt();
-
+// Creo un swtch para la evaluación de la opción ingresada por el usuario en este caso opc.
             switch (opc) {
+                //Si el usuario digito 1 entra a este case 
                 case 1:
+                //Despliego otro menu
                     System.out.println("╔═══════════════════════════════════╗");
                     System.out.println("║       Donde desea agregarlo       ║");
                     System.out.println("╠═══════════════════════════════════╣");
@@ -38,8 +45,13 @@ public class AppMejorada {
                     System.out.println("╚═══════════════════════════════════╝");
                     System.out.print("Selecciona una opción: ");
                     int agregar = t.nextInt();
-
+                    // Lectura de la opción para agregar jugador.
+                // Impresión de la solicitud para que el usuario ingrese datos del jugador.
+                //Tambien hay una lectura de los datos ingresados por la persona.
                     System.out.println("Ingrese el nombre del equipo: ");
+                //NombreEquipo es una clase tipo enumerador a la cual le creo una instancia llamada 
+                //nombreEquipito al lado derecho del igual MostrarGenericos esta es una clase la cual tiene 
+                //unas funciones staticas en este caso lo que hace es mostrar lo equipos que 
                     NombreEquipo nombreEquipito = MostrarGenericos.mostrarEquipos();
                     String nombreEquipitoString = nombreEquipito.getnom();
                     System.out.println("Ingrese el numero del jugador ");
@@ -52,8 +64,10 @@ public class AppMejorada {
                     int numeroAutoGoles = t.nextInt();
                     System.out.println("Ingrese el salario del jugador ");
                     double salarioJugador = t.nextDouble();
-
+                    //Creacion de un if para que dependiendo de la opcion entre y pida unos datos extras
+                    //Este caso pide los datos de un arquero y tambien lo lee 
                     if (agregar == 1) {
+                        
                         String posicion = "Arquero";
                         System.out.println("Ingrese el numero de balones tapados del jugador ");
                         int golesTapados = t.nextInt();
