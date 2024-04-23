@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+
 
 public class GestionarEquipos {
 
@@ -9,11 +11,11 @@ public class GestionarEquipos {
         equipos = new ArrayList<>();
     }
 
-    public void anadirEquipos(EquipoFutbol equipo, int numJu, String pos, String nomEqui) {
+    public void anadirEquipos(EquipoFutbol equipo) {
         for (EquipoFutbol e : equipos) {
-            if (nomEqui.equals(e.getEquipo()) && numJu == e.getNumeroJugador()) {
-                System.out.println("El número del jugador está repetido para el equipo " + nomEqui);
-                return; // Salir del método si se encuentra un jugador con el mismo número
+            if (e.getEquipo().equals(equipo.getEquipo()) && e.getNumeroJugador() == equipo.getNumeroJugador()){
+                System.out.println("El número del jugador está repetido");
+                return; // Termina el método si encuentra un jugador con el mismo número
             }
         }
         equipos.add(equipo);
@@ -24,45 +26,60 @@ public class GestionarEquipos {
             System.out.println(e);
         }
     }
-
-    public void modificarEquipos(int indice, EquipoFutbol equipo) {
-        equipos.set(indice, equipo);
-    }
-
-    public void eliminarEquipos(int indice) {
-        if (indice >= 0 && indice < equipos.size()) {
-            equipos.remove(indice);
-        } else {
-            System.out.println("Índice fuera de rango.");
+//tengo una idea con esta funcion y es crear otra funcion ejemplo repetida 
+//si me retorna true es que en esye caso existe ese numero y ese equipo y entonces lo que hago es 
+//mandar todos los datos para que los modifique, pero si no encuentra nada entonces me sale un mensaje
+//diciendo de que no esta y entonces me ahorro un tiempo de ingresar datos y que despues me diga
+//"Este jugador no existe" en pocas palabras me ahorra tiempo
+    public void modificarEquipos(int numju, String equi,int nuevoNumeroju, String nuevoEqui) {
+        for (EquipoFutbol equipo : equipos) {
+            if (equipo.getEquipo().equals(equi) && equipo.getNumeroJugador() == numju) {
+                equipo.setNumeroJugador(nuevoNumeroju);
+                equipo.setEquipo(nuevoEqui);
+                break; // Rompe el bucle una vez que se han modificado los datos del equipo
+            }
         }
     }
 
-    public void mostrarEquipoEspecifico(String nomEqui, String pos, int numJu) {
+    public void eliminarEquipos(int numju, String equi) {
+        Iterator<EquipoFutbol> iterator = equipos.iterator();
+        while (iterator.hasNext()) {
+            EquipoFutbol equipoFutbol = iterator.next();
+            if (equipoFutbol.getNumeroJugador() == numju && equipoFutbol.getEquipo().equals(equi)) {
+                iterator.remove();
+            }
+        }
+        // for (EquipoFutbol equipoFutbol : equipos) {
+        //     if (equipoFutbol.getNumeroJugador() == numju && equipoFutbol.getEquipo().equals(equi)) {
+        //         equipos.remove(numju);
+        //     }
+        // }
+    }
+
+    public void mostrarEquipoEspecifico( int numJu, String nomEqui) {
         for (EquipoFutbol e : equipos) {
-            if (nomEqui == e.getEquipo() && pos == e.getPosicion() && numJu == e.getNumeroJugador()) {
+            if (nomEqui == e.getEquipo() && numJu == e.getNumeroJugador()) {
                 System.out.println(e);
             }
         }
     }
 
-    public void agregarEquiposDesdeGenerico(EquipoGenerico<? extends EquipoFutbol> equipoGenerico) {
-        // List<? extends EquipoFutbol> listaEquiposGenerico =
-        // equipoGenerico.obtenerListaEquipos();
-        equipos.addAll(equipoGenerico.obtenerListaEquipos());
+    public void agregarEquiposDesdeGenerico(EquipoGenerico<? extends EquipoFutbol> equipoGenerico,boolean b) {
+        if (b == true) {
+            equipos.addAll(equipoGenerico.obtenerListaEquipos());
+        }else{
+            System.out.println("esta lista esta repetida");
+        }
+        
     }
 
-    public void encontrarPosicion(String nombreEquipitoString, int numeroJugador, String posicion) {
-        for (int i = 0; i < equipos.size(); i++) {
-            EquipoFutbol equipo = equipos.get(i);
-            if (equipo.getNombreEqui().getnom().equals(nombreEquipitoString) &&
-                equipo.getNumeroJugador() == numeroJugador &&
-                equipo.getPosicion().equals(posicion)) {
-                System.out.println("El objeto se encuentra en la posición " + i + " del ArrayList.");
-                return; // Se encontró el objeto, así que podemos salir del bucle.
+    public boolean repetido( String equi, int numeroJugador) {
+        for (EquipoFutbol equipoFutbol : equipos) {
+            if (equipoFutbol.getEquipo().equals(equi) && equipoFutbol.getNumeroJugador() == numeroJugador) {
+                return true; // Jugador repetido encontrado
             }
         }
-        // Si el objeto no se encontró en el ArrayList.
-        System.out.println("El objeto no se encontró en el ArrayList.");
-    }
+        return false; // No se encontró jugador repetido
+    }   
 
 }

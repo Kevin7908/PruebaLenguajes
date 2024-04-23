@@ -65,22 +65,22 @@ public class Defensa extends EquipoFutbol {
 
     @Override
     public String toString() {
-        return "╔═══════════════════════════════════════════════╗\n" +
-               "║              Atributos del Defensa            ║\n" +
-               "╠═══════════════════════════════════════════════╣\n" +
-               "║  Equipo: " + getEquipo() +                  " ║\n" +
-               "║  Posición: " + getPosicion() +              " ║\n" +
-               "║  Nombre del Equipo: " + getNombreEqui() +   " ║\n" +
-               "║  Número de Jugador: " + getNumeroJugador() + "║\n" +
-               "║  Número de Goles: " + getNumeroGoles() +     "║\n" +
-               "║  Número de Pases: " + getNumeroPases() +     "║\n" +
-               "║  Número de Autogoles: "+getNumeroAutoGoles()+"║\n" +
-               "║  Salario del Jugador: "+getSalarioJugador()+ "║\n" +
-               "║  Liderazgo Defensivo: " + liderazgoDefensivo+"║\n" +
-               "║  Posición Defensa: " + posicionDefensaString+"║\n" +
-               "║  Tackle: " + tackle +                        "║\n" +
-               "║  Marcaje al Hombre: " + marcajeAlHombre +    "║\n" +
-               "╚═══════════════════════════════════════════════╝";
+        return "╔═══════════════════════════════════════════════\n" +
+               "║              Atributos del Defensa            \n" +
+               "╠═══════════════════════════════════════════════\n" +
+               "║  Equipo: " + getEquipo() +                  " \n" +
+               "║  Posición: " + getPosicion() +              " \n" +
+               "║  Nombre del Equipo: " + getEquipo() +   " \n" +
+               "║  Número de Jugador: " + getNumeroJugador() + "\n" +
+               "║  Número de Goles: " + getNumeroGoles() +     "\n" +
+               "║  Número de Pases: " + getNumeroPases() +     "\n" +
+               "║  Número de Autogoles: "+getNumeroAutoGoles()+"\n" +
+               "║  Salario del Jugador: "+getSalarioJugador()+ "\n" +
+               "║  Liderazgo Defensivo: " + liderazgoDefensivo+"\n" +
+               "║  Posición Defensa: " + posicionDefensaString+"\n" +
+               "║  Tackle: " + tackle +                        "\n" +
+               "║  Marcaje al Hombre: " + marcajeAlHombre +    "\n" +
+               "╚═══════════════════════════════════════════════";
     }
     
 }

@@ -11,7 +11,6 @@ public class MostrarGenericos {
         
         // Mostrar la lista de equipos
         System.out.println();
-        System.out.println();
         int c = 1;
         for (NombreEquipo nombreEquipo : NombreEquipo.values()) {
             System.out.println(c + ". " + nombreEquipo.getnom());
@@ -47,7 +46,7 @@ public class MostrarGenericos {
             c++;
         }
 
-        System.out.println("Ingrese el número correspondiente a la calidad del jugador:");
+        System.out.println("Ingrese el número correspondiente: ");
         int numeroCalidad = 0;
         try {
             numeroCalidad = Integer.parseInt(teclado.nextLine());

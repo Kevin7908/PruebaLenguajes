@@ -67,22 +67,21 @@ public class Delantero extends EquipoFutbol {
 
     @Override
     public String toString() {
-        return "╔═════════════════════════════════════════════════════╗\n" +
-               "║               Atributos del Delantero               ║\n" +
-               "╠═════════════════════════════════════════════════════╣\n" +
-               "║ Equipo: " + getEquipo() + "                         ║\n" +
-               "║ Posición: " + getPosicion() + "                     ║\n" +
-               "║ Nombre del Equipo: " + getNombreEqui() + "          ║\n" +
-               "║ Número de Jugador: " + getNumeroJugador() + "       ║\n" +
-               "║ Número de Goles: " + getNumeroGoles() + "           ║\n" +
-               "║ Número de Pases: " + getNumeroPases() + "           ║\n" +
-               "║ Número de Autogoles: " +getNumeroAutoGoles()+"      ║\n" +
-               "║ Salario del Jugador: " + getSalarioJugador()+"      ║\n" +
-               "║ Desmarque: " + desmarque + "                        ║\n" +
-               "║ Remate de primera: " + remateDePrimera + "          ║\n" +
-               "║ Goles anotados por partido: "+golesAnotadosPartido+"║\n" +
-               "║ Precisión de tiros: " + presicionTiros + "          ║\n" +
-               "╚═════════════════════════════════════════════════════╝";
+        return "╔═════════════════════════════════════════════════════\n" +
+               "║               Atributos del Delantero               \n" +
+               "╠═════════════════════════════════════════════════════\n" +
+               "║ Posición: " + getPosicion() + "                     \n" +
+               "║ Nombre del Equipo: " + getEquipo() + "          \n" +
+               "║ Número de Jugador: " + getNumeroJugador() + "       \n" +
+               "║ Número de Goles: " + getNumeroGoles() + "           \n" +
+               "║ Número de Pases: " + getNumeroPases() + "           \n" +
+               "║ Número de Autogoles: " +getNumeroAutoGoles()+"      \n" +
+               "║ Salario del Jugador: " + getSalarioJugador()+"      \n" +
+               "║ Desmarque: " + desmarque + "                        \n" +
+               "║ Remate de primera: " + remateDePrimera + "          \n" +
+               "║ Goles anotados por partido: "+golesAnotadosPartido+"\n" +
+               "║ Precisión de tiros: " + presicionTiros + "          \n" +
+               "╚═════════════════════════════════════════════════════";
     }
     
     
