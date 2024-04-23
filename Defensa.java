@@ -1,53 +1,51 @@
 
 public class Defensa extends EquipoFutbol {
 
-    private String liderazgoDefensivo;
-    private String posicion; // puede ser lateral izquierdo, lateral derecho o central
-    private String tackle;
-    private String marcajeAlHombre;
-
-
+    private CalidadJugador liderazgoDefensivo;
+    private String posicionDefensaString; // puede ser lateral izquierdo, lateral derecho o central
+    private CalidadJugador tackle;
+    private CalidadJugador marcajeAlHombre;
 
     public Defensa(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
-            int numeroPases, int numeroAutoGoles, double salarioJugador, 
-            String liderazgoDefensivo, String posicion2, String tackle, String marcajeAlHombre) {
+            int numeroPases, int numeroAutoGoles, double salarioJugador, CalidadJugador liderazgoDefensivo,
+            String posicionDefensaString, CalidadJugador tackle, CalidadJugador marcajeAlHombre) {
         super(equipo, posicion, nombreEqui, numeroJugador, numeroGoles, numeroPases, numeroAutoGoles, salarioJugador);
         this.liderazgoDefensivo = liderazgoDefensivo;
-        posicion = posicion2;
+        this.posicionDefensaString = posicionDefensaString;
         this.tackle = tackle;
         this.marcajeAlHombre = marcajeAlHombre;
     }
-
-    public String getLiderazgoDefensivo() {
+    
+    public CalidadJugador getLiderazgoDefensivo() {
         return liderazgoDefensivo;
     }
 
-    public void setLiderazgoDefensivo(String liderazgoDefensivo) {
+    public void setLiderazgoDefensivo(CalidadJugador liderazgoDefensivo) {
         this.liderazgoDefensivo = liderazgoDefensivo;
     }
 
-    public String getPosicion() {
-        return posicion;
-    }
-
-    public void setPosicion(String posicion) {
-        this.posicion = posicion;
-    }
-
-    public String getTackle() {
+    public CalidadJugador getTackle() {
         return tackle;
     }
 
-    public void setTackle(String tackle) {
+    public void setTackle(CalidadJugador tackle) {
         this.tackle = tackle;
     }
 
-    public String getMarcajeAlHombre() {
+    public CalidadJugador getMarcajeAlHombre() {
         return marcajeAlHombre;
     }
 
-    public void setMarcajeAlHombre(String marcajeAlHombre) {
+    public void setMarcajeAlHombre(CalidadJugador marcajeAlHombre) {
         this.marcajeAlHombre = marcajeAlHombre;
+    }
+
+    public String getposicionDefensaString() {
+        return posicionDefensaString;
+    }
+
+    public void setposicionDefensaString(String posicionDefensaString) {
+        this.posicionDefensaString = posicionDefensaString;
     }
 
     @Override
@@ -65,4 +63,24 @@ public class Defensa extends EquipoFutbol {
         return 0; 
     }
 
+    @Override
+    public String toString() {
+        return "╔═══════════════════════════════════════════════╗\n" +
+               "║              Atributos del Defensa            ║\n" +
+               "╠═══════════════════════════════════════════════╣\n" +
+               "║  Equipo: " + getEquipo() +                  " ║\n" +
+               "║  Posición: " + getPosicion() +              " ║\n" +
+               "║  Nombre del Equipo: " + getNombreEqui() +   " ║\n" +
+               "║  Número de Jugador: " + getNumeroJugador() + "║\n" +
+               "║  Número de Goles: " + getNumeroGoles() +     "║\n" +
+               "║  Número de Pases: " + getNumeroPases() +     "║\n" +
+               "║  Número de Autogoles: "+getNumeroAutoGoles()+"║\n" +
+               "║  Salario del Jugador: "+getSalarioJugador()+ "║\n" +
+               "║  Liderazgo Defensivo: " + liderazgoDefensivo+"║\n" +
+               "║  Posición Defensa: " + posicionDefensaString+"║\n" +
+               "║  Tackle: " + tackle +                        "║\n" +
+               "║  Marcaje al Hombre: " + marcajeAlHombre +    "║\n" +
+               "╚═══════════════════════════════════════════════╝";
+    }
+    
 }

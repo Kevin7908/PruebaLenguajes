@@ -26,12 +26,6 @@ abstract class EquipoFutbol {
         this.salarioJugador = salarioJugador;
     }
 
-    public EquipoFutbol(String numeroJugador2, String equipo2) {
-		//TODO Auto-generated constructor stub
-	}
-	public EquipoFutbol(String equipo2) {
-        //TODO Auto-generated constructor stub
-    }
     public CalidadJugador getCalidadJu() {
         return calidadJu;
     }
@@ -101,13 +95,6 @@ abstract class EquipoFutbol {
 
     public void setEquipo(String equipo) {
         this.equipo = equipo;
-    }
-
-    @Override
-    public String toString() {
-        return "EquipoFutbol [equipo=" + equipo + ", posicion=" + posicion + ", nombreEqui=" + nombreEqui
-                + ", numeroJugador=" + numeroJugador + ", numeroGoles=" + numeroGoles + ", numeroPases=" + numeroPases
-                + ", numeroAutoGoles=" + numeroAutoGoles + ", salarioJugador=" + salarioJugador + "]";
     }
 
 }
