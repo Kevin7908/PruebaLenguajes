@@ -1,11 +1,15 @@
 
 public class Defensa extends EquipoFutbol {
 
+    //como vemos arriba esta clase Defensa extiende de EquipoFutbol
+    //Y estos son atributos de la clase Defensa
+    //Varibles de tipo CalidadJugador 
     private CalidadJugador liderazgoDefensivo;
     private String posicionDefensaString; // puede ser lateral izquierdo, lateral derecho o central
     private CalidadJugador tackle;
     private CalidadJugador marcajeAlHombre;
 
+    //Su respectivo constructor
     public Defensa(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
             int numeroPases, int numeroAutoGoles, double salarioJugador, CalidadJugador liderazgoDefensivo,
             String posicionDefensaString, CalidadJugador tackle, CalidadJugador marcajeAlHombre) {
@@ -15,7 +19,7 @@ public class Defensa extends EquipoFutbol {
         this.tackle = tackle;
         this.marcajeAlHombre = marcajeAlHombre;
     }
-    
+    //Creamos su respectivos getter and setters
     public CalidadJugador getLiderazgoDefensivo() {
         return liderazgoDefensivo;
     }
@@ -47,7 +51,7 @@ public class Defensa extends EquipoFutbol {
     public void setposicionDefensaString(String posicionDefensaString) {
         this.posicionDefensaString = posicionDefensaString;
     }
-
+    //funciones polimorficas de la clase EquipoFutbol
     @Override
     public double calcularGoles() {
         return 0; 
@@ -62,7 +66,7 @@ public class Defensa extends EquipoFutbol {
     public double calcularSalarioTotal() {
         return 0; 
     }
-
+    //Un to string para mostrar el estado del objeto
     @Override
     public String toString() {
         return "╔═══════════════════════════════════════════════\n" +

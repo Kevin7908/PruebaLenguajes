@@ -1,14 +1,10 @@
 import java.util.Scanner;
 
 public class MostrarGenericos {
+    //volvemos statico el Scanner para utilizarlo donde queramos
     static Scanner teclado = new Scanner(System.in);
-    // public static void main(String[] args) {
-    // Scanner t = new Scanner(System.in);
-
-    // }
-
+    //Lo mismo con esta funcion se vuelve statica y va a retornar algo de tipo NombreEquipo
     static NombreEquipo mostrarEquipos() {
-        
         // Mostrar la lista de equipos
         System.out.println();
         int c = 1;
@@ -21,15 +17,23 @@ public class MostrarGenericos {
         System.out.println("Ingrese el número del equipo:");
         int numeroEquipo;
         try {
+            // Intenta convertir la entrada del usuario en un número entero
             numeroEquipo = Integer.parseInt(teclado.nextLine());
         } catch (NumberFormatException e) {
+            // Si ocurre un error durante la conversión, se ejecuta este bloque de código
+            // Se imprime un mensaje de error en la consola
             System.out.println("Error: Por favor ingrese un número válido.");
-            return null; // Salir del método si se produce un error
+            // Se devuelve null para indicar que no se pudo obtener un número válido
+            return null;
         }
 
         // Verificar si el número de equipo está dentro del rango válido
         if (numeroEquipo >= 1 && numeroEquipo <= NombreEquipo.values().length) {
             // Obtener el nombre del equipo correspondiente al número ingresado
+            //Se retorna algo de tipo NombreEquipo el .values() nos devuelve un array que contiene todos
+            //los valores de la enumeración, [numeroEquipo - 1] esta es la varible con el numero que elijio
+            //el usuario y -1 para que no no salge el error de index bounds 
+            //y asi nos retorna una enumeracion dependiendo del numero que elijio el usuario
             return NombreEquipo.values()[numeroEquipo - 1];
         } else {
             System.out.println("Número de equipo fuera de rango.");
@@ -37,21 +41,26 @@ public class MostrarGenericos {
         }
 
     }//fin funcion
-
+//Lo mismo con esta funcion se vuelve statica y va a retornar algo de tipo NombreEquipo
     static CalidadJugador mostrarCalidad(){
-
+        // Mostrar la lista de equipos
         int c = 1;
         for (CalidadJugador calidad : CalidadJugador.values()) {
             System.out.println(c + ". " + calidad);
             c++;
         }
-
+        //pedimos y leeamos el numero que se ingreso 
         System.out.println("Ingrese el número correspondiente: ");
         int numeroCalidad = 0;
+
         try {
+            // Intenta convertir la entrada del usuario en un número entero
             numeroCalidad = Integer.parseInt(teclado.nextLine());
         } catch (NumberFormatException e) {
+            // Si ocurre un error durante la conversión, se ejecuta este bloque de código
+            // Se imprime un mensaje de error en la consola
             System.out.println("Error: Por favor ingrese un número válido.");
+            // Se devuelve null para indicar que no se pudo obtener un número válido
             return null; // Devolver null si se produce un error
         }
 

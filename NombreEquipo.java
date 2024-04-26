@@ -1,3 +1,6 @@
+
+//Como nos damos cuenta una clase enum con sus respectivos enumeradores
+//Pero esta como nos damos cuenta tiene un constructor con su nombre sin estar todo en mayuscula
 public enum NombreEquipo {
 
     REAL_MADRID("Real Madrid"),

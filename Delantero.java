@@ -1,6 +1,9 @@
 
 public class Delantero extends EquipoFutbol {
 
+    //como vemos arriba esta clase Delantero extiende de EquipoFutbol
+    //Y estos son atributos de la clase Delantero
+    //Varibles de tipo CalidadJugador 
     private CalidadJugador desmarque;
     private CalidadJugador remateDePrimera;
     private int golesAnotadosPartido;
@@ -49,7 +52,7 @@ public class Delantero extends EquipoFutbol {
     public void setGolesAnotadosPartido(int golesAnotadosPartido) {
         this.golesAnotadosPartido = golesAnotadosPartido;
     }
-
+    //funciones polimorficas de la clase EquipoFutbol
     @Override
     public double calcularGoles() {
         return 0;
@@ -64,7 +67,7 @@ public class Delantero extends EquipoFutbol {
     public double calcularSalarioTotal() {
         return 0;
     }
-
+    //un to string para mostrar el estado del objeto
     @Override
     public String toString() {
         return "╔═════════════════════════════════════════════════════\n" +
@@ -83,6 +86,5 @@ public class Delantero extends EquipoFutbol {
                "║ Precisión de tiros: " + presicionTiros + "          \n" +
                "╚═════════════════════════════════════════════════════";
     }
-    
     
 }

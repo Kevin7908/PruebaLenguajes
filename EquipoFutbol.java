@@ -1,5 +1,5 @@
 abstract class EquipoFutbol {
-    // aca va el enum nombreEquipo
+    //Atributos de la clase EquipoFutbol
     private String equipo = "";
     private String posicion;
     private NombreEquipo nombreEqui;
@@ -9,13 +9,14 @@ abstract class EquipoFutbol {
     private int numeroAutoGoles;
     private double salarioJugador;
     private CalidadJugador calidadJu;
-
+    //Funciones polimorficas de la clase 
     public abstract double calcularGoles();
     public abstract double calcularPases();
     public abstract double calcularSalarioTotal();
-
+    //El constructor de la clase que como vemos tiene la palabra reservada super que nos indica que va a heredar
     public EquipoFutbol(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
             int numeroPases, int numeroAutoGoles, double salarioJugador) {
+            super();
         this.equipo = equipo;
         this.posicion = posicion;
         this.nombreEqui = nombreEqui;
@@ -25,7 +26,7 @@ abstract class EquipoFutbol {
         this.numeroAutoGoles = numeroAutoGoles;
         this.salarioJugador = salarioJugador;
     }
-
+    //Sus respectivos getters and setters 
     public CalidadJugador getCalidadJu() {
         return calidadJu;
     }

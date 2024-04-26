@@ -1,12 +1,15 @@
 
 public class Arquero extends EquipoFutbol {
 
+    //como vemos arriba esta clase Arquero extiende de EquipoFutbol
+    //Y estos son atributos de la clase Arquero
+    //Varibles de tipo CalidadJugador 
     private int golesTapados;
     private CalidadJugador agilidadManos;
     private CalidadJugador salidaEnFalso;
     private CalidadJugador juegoAereoDefensivo;
 
-
+    //creamos un constructor
     public Arquero(String equipo, String posicion, NombreEquipo nombreEqui, int numeroJugador, int numeroGoles,
             int numeroPases, int numeroAutoGoles, double salarioJugador, int golesTapados,
             CalidadJugador agilidadManos, CalidadJugador salidaEnFalso, CalidadJugador juegoAereoDefensivo) {
@@ -18,6 +21,7 @@ public class Arquero extends EquipoFutbol {
         this.juegoAereoDefensivo = juegoAereoDefensivo;
     }
 
+    //creamos sus respectivos getters and setters
     public int getGolesTapados() {
         return golesTapados;
     }
@@ -49,7 +53,7 @@ public class Arquero extends EquipoFutbol {
     public void setJuegoAereoDefensivo(CalidadJugador juegoAereoDefensivo) {
         this.juegoAereoDefensivo = juegoAereoDefensivo;
     }
-
+    //estas son funciones polimorficas de la clase EquipoFutbol
     @Override
     public double calcularGoles() {
         return 0;
@@ -64,7 +68,7 @@ public class Arquero extends EquipoFutbol {
     public double calcularSalarioTotal() {
         return 0;
     }
-
+    //un toString para mostrar el estado del objeto
     @Override
     public String toString() {
         return "╔════════════════════════════════════════════════\n" +
