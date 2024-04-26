@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
@@ -22,8 +23,15 @@ public class EquipoStream {
         equiposEs = new ArrayList<>();
     }
 
-    public void agregarEquipoStream(EquipoFutbol equipo){
+    public boolean agregarEquipoStream(EquipoFutbol equipo) {
+        for (EquipoFutbol e : equiposEs) {
+            if (e.getEquipo().equals(equipo.getEquipo()) && e.getNumeroJugador() == equipo.getNumeroJugador()){
+                System.out.println("El número del jugador está repetido");
+                return false; // Termina el método si encuentra un jugador con el mismo número
+            }
+        }
         equiposEs.add(equipo);
+        return true;
     }
 
     public void mostrarEquipoStream(){
@@ -117,9 +125,20 @@ public class EquipoStream {
         return equiposEs;
     }
 
-    public void eliminarEquiposStreams(){
-        equiposEs.clear();
+public void eliminarEquipos(int numju, String equi) {
+    // Se crea un iterador sobre la lista de equipos de fútbol.
+    Iterator<EquipoFutbol> iterator = equiposEs.iterator();
+    // Se recorre la lista utilizando el iterador.
+    while (iterator.hasNext()) {
+        // Se obtiene el próximo equipo de fútbol en la lista.
+        EquipoFutbol equipoFutbol = iterator.next();
+        // Se verifica si el número de jugador y el nombre del equipo coinciden con los proporcionados.
+        if (equipoFutbol.getNumeroJugador() == numju && equipoFutbol.getEquipo().equals(equi)) {
+            // Si coinciden, se elimina el equipo de la lista.
+            iterator.remove();
+        }
     }
+}
 
 /////////////////////////////////////////////////
 //getter and setters
@@ -137,6 +156,17 @@ public class EquipoStream {
 
     public void setEquipito(String equipito) {
         this.equipito = equipito;
+    }
+
+    public boolean repetido(String equipo, int numeroJugador) {
+        // Iterar sobre la lista de equipos en equiposEs
+        for (EquipoFutbol e : equiposEs) {
+            // Comprobar si hay un equipo con el mismo nombre y número de jugador
+            if (e.getEquipo().equals(equipo) && e.getNumeroJugador() == numeroJugador) {
+                return true; // Datos repetidos encontrados
+            }
+        }
+        return false; // No se encontraron datos repetidos
     }
 
 

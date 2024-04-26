@@ -97,13 +97,22 @@ public void mostrarEquipoEspecifico(int numJu, String nomEqui) {
 //entonces si el jugador no esta repetido me retorna true y entra en el if, aca le decimos que al arralist
 //de la clase gestionar le agregue equipo generico, y lo que hace la funcion obtenerListaEquipo es retornarme
 //el arraylist de equipogenerico con los datos que ingrese si no me muestra un mensaje 
-    public void agregarEquiposDesdeGenerico(EquipoGenerico<? extends EquipoFutbol> equipoGenerico,boolean b) {
-        if (b == true) {
+    public void agregarEquiposDesdeGenerico(EquipoGenerico<? extends EquipoFutbol> equipoGenerico,boolean c) {
+        if (c ==true) {
             equipos.addAll(equipoGenerico.obtenerListaEquipos());
         }else{
             System.out.println("esta lista esta repetida");
         }
         
+    }
+
+    public void agregarEquiposDesdeStreams(EquipoStream equipoStream, boolean repe1, boolean t){
+        if ( t == true) {
+            equipos.addAll(equipoStream.obtenerEquipoStream()); 
+        }else{
+            System.out.println("eto eta raro");
+        }
+            
     }
 
 //Esta funcion recibe nombreEquipo yel numero de jugador
@@ -117,6 +126,19 @@ public void mostrarEquipoEspecifico(int numJu, String nomEqui) {
             }
         }
         return false; // No se encontró jugador repetido
-    }   
+    }
 
+    public boolean verificarDatosRepetidos(EquipoStream equipoStream, EquipoGenerico<?> equipoGenerico) {
+        // Iterar sobre la lista de equipos genéricos
+        for (EquipoFutbol equipo : equipos) {
+            // Verificar si el equipo de fútbol está repetido en la lista de equipos genéricos
+            if (equipoGenerico.obtenerListaEquipos().contains(equipo)) {
+                // Si se encuentra un equipo repetido, devolver true
+                return true;
+            }
+        }
+        // Si no se encontraron datos repetidos, devolver false
+        return false;
+    }
+    
 }

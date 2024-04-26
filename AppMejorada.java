@@ -100,12 +100,23 @@ public class AppMejorada {
                     // y llamo a la funcion agregarEquipoGenerico le envio en constructor de la clase arquero
                     //con todos los datos
                         boolean b = equipoGenerico.agregarEquipoGenerico(arquero);
+                        boolean repe = gestionar.verificarDatosRepetidos(equipoStream, equipoGenerico);
+                        System.out.println(repe);
+
+                        if (repe ==false) {
+                            gestionar.agregarEquiposDesdeGenerico(equipoGenerico,  b);
+                            gestionar.mostrarEquipoEspecifico(numeroJugador, nombreEquipitoString);
+                        }
+                            
+                        //equipoGenerico.eliminarEquipos(numeroJugador, nombreEquipitoString);
+                            
+
                     //Llamo a la instancia de GestionarEquipo y ejecuto la siguiente funcion mandandole 
                     //como parametro b que es muy importante en esta parte
-                        gestionar.agregarEquiposDesdeGenerico(equipoGenerico, b);
+                        
                     //Llamo la instancia de GestionarEquipos y la funcion mostrar quelo que hace es mostrar
                     //el equipo que cumpla con ciertas caracteristicas
-                        gestionar.mostrarEquipoEspecifico(numeroJugador, nombreEquipitoString);
+                        
 
                     } else if (agregar == 2) {
                     //cre una variable quemada para enviar al constructor y sigue pidiendo datos
@@ -133,9 +144,13 @@ public class AppMejorada {
                     //y llamo a la funcion agregarEquipoGenerico le envio en constructor de la clase delantero
                     //con todos los datos
                         boolean b = equipoGenerico.agregarEquipoGenerico(delantero);
+                        boolean repe = gestionar.verificarDatosRepetidos(equipoStream, equipoGenerico);
+                        System.out.println(repe);
                     //Llamo a la instancia de GestionarEquipo y ejecuto la siguiente funcion mandandole 
                     //como parametro b que es muy importante en esta parte
-                        gestionar.agregarEquiposDesdeGenerico(equipoGenerico, b);
+                        //gestionar.agregarEquiposDesdeGenerico(equipoGenerico, b);
+                        gestionar.agregarEquiposDesdeGenerico(equipoGenerico,  b);
+                        //equipoGenerico.eliminarEquipos(numeroJugador, nombreEquipitoString);
                     //Llamo la instancia de GestionarEquipos y la funcion mostrar quelo que hace es mostrar
                     //el equipo que cumpla con ciertas caracteristicas
                         gestionar.mostrarEquipoEspecifico(numeroJugador, nombreEquipitoString );
@@ -173,7 +188,7 @@ public class AppMejorada {
                         boolean b = equipoGenerico.agregarEquipoGenerico(defensa);
                     //Llamo a la instancia de GestionarEquipo y ejecuto la siguiente funcion mandandole 
                     //como parametro b que es muy importante en esta parte
-                        gestionar.agregarEquiposDesdeGenerico(equipoGenerico, b);
+                       // gestionar.agregarEquiposDesdeGenerico(equipoGenerico, b);
                     //Llamo la instancia de GestionarEquipos y la funcion mostrar quelo que hace es mostrar
                     //el equipo que cumpla con ciertas caracteristicas
                         gestionar.mostrarEquipoEspecifico(numeroJugador, nombreEquipitoString);
@@ -252,12 +267,23 @@ public class AppMejorada {
                     break;
 
                 case 6:
-                    int opcion = 0;
+                    int opcion = 0, ingresarDato = 0;
                     opcion = mostrarOpcionStream();
                     if (opcion == 1) {
 
-                        equipoStream.agregarEquipoStream(equipoStream.generarEquipoAleatorio.get());
+                        boolean tw =equipoStream.agregarEquipoStream(equipoStream.generarEquipoAleatorio.get());
                         equipoStream.mostrarEquipoStream();
+                        System.out.println("Desea ingresar los datos a la base de datos principal");
+                        System.out.println("1=Si, 2=No");
+                        ingresarDato = t.nextInt();
+                        boolean repe1 = gestionar.verificarDatosRepetidos(equipoStream, equipoGenerico);
+                        if (ingresarDato == 1 ) {
+                            gestionar.agregarEquiposDesdeStreams(equipoStream, repe1,tw);
+                            equipoStream.eliminarEquipos(equipoStream.getNumeroj(), equipoStream.getEquipito());
+                        }
+                        equipoStream.mostrarEquipoStream();
+
+
                     }
                     break;
                 case 7:
