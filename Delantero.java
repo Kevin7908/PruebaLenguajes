@@ -73,9 +73,9 @@ public class Delantero extends EquipoFutbol {
         return "╔═════════════════════════════════════════════════════\n" +
                "║               Atributos del Delantero               \n" +
                "╠═════════════════════════════════════════════════════\n" +
-               "║ Posición: " + getPosicion() + "                     \n" +
                "║ Nombre del Equipo: " + getEquipo() + "          \n" +
                "║ Número de Jugador: " + getNumeroJugador() + "       \n" +
+               "║ Posición: " + getPosicion() + "                     \n" +
                "║ Número de Goles: " + getNumeroGoles() + "           \n" +
                "║ Número de Pases: " + getNumeroPases() + "           \n" +
                "║ Número de Autogoles: " +getNumeroAutoGoles()+"      \n" +
