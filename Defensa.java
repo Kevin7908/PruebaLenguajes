@@ -72,10 +72,9 @@ public class Defensa extends EquipoFutbol {
         return "╔═══════════════════════════════════════════════\n" +
                "║              Atributos del Defensa            \n" +
                "╠═══════════════════════════════════════════════\n" +
-               "║  Equipo: " + getEquipo() +                  " \n" +
-               "║  Posición: " + getPosicion() +              " \n" +
-               "║  Nombre del Equipo: " + getEquipo() +   " \n" +
+               "║  Nombre del equipo: " + getEquipo() +                  " \n" +
                "║  Número de Jugador: " + getNumeroJugador() + "\n" +
+               "║  Posición: " + getPosicion() +              " \n" +
                "║  Número de Goles: " + getNumeroGoles() +     "\n" +
                "║  Número de Pases: " + getNumeroPases() +     "\n" +
                "║  Número de Autogoles: "+getNumeroAutoGoles()+"\n" +

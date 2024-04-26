@@ -74,13 +74,13 @@ public class Arquero extends EquipoFutbol {
         return "╔════════════════════════════════════════════════\n" +
                "║              Atributos del Arquero             \n" +
                "╠════════════════════════════════════════════════\n" +
+               "║  Nombre del equipo: " + getEquipo() + "    \n" +
                "║  Número de jugador: " + getNumeroJugador() + " \n" +
+               "║  Posición: " + getPosicion() + "               \n" +
                "║  Número de goles: " + getNumeroGoles() + "     \n" +
                "║  Número de pases: " + getNumeroPases() + "     \n" +
                "║  Número de autogoles: " +getNumeroAutoGoles()+"\n" +
                "║  Salario del jugador: " + getSalarioJugador()+"\n" +
-               "║  Nombre del equipo: " + getEquipo() + "    \n" +
-               "║  Posición: " + getPosicion() + "               \n" +
                "║  Goles tapados: " + golesTapados + "           \n" +
                "║  Agilidad de manos: " + agilidadManos + "      \n" +
                "║  Salida en falso: " + salidaEnFalso + "        \n" +

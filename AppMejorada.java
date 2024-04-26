@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class AppMejorada {
@@ -8,6 +9,7 @@ public class AppMejorada {
     }
 
     public static void menu() {
+        EquipoStream equipoStream =  new EquipoStream();
         //creo un objeto de tipo Scanner para ingresar datos
         Scanner t = new Scanner(System.in);
         //creo un objeto tipo Equipo Generico para ingresar datos
@@ -18,16 +20,17 @@ public class AppMejorada {
         boolean continuar = true;
 // Ciclo while que se ejecutará mientras la variable continuar sea verdadera.
         while (continuar) {
-            System.out.println("╔═══════════════════════════════════╗");
-            System.out.println("║         Bienvenido al menu        ║");
-            System.out.println("╠═══════════════════════════════════╣");
-            System.out.println("║  1. Agregar jugador               ║");
-            System.out.println("║  2. Borrar jugador                ║");
-            System.out.println("║  3. Mostrar jugador               ║");
-            System.out.println("║  4. Modificar jugador             ║");
-            System.out.println("║  5. Mostrar todo                  ║");
-            System.out.println("║  6. Salir                         ║");
-            System.out.println("╚═══════════════════════════════════╝");
+            System.out.println("╔═══════════════════════════════════════╗");
+            System.out.println("║         Bienvenido al menu            ║");
+            System.out.println("╠═══════════════════════════════════════╣");
+            System.out.println("║  1. Agregar jugador                   ║");
+            System.out.println("║  2. Borrar jugador                    ║");
+            System.out.println("║  3. Mostrar jugador                   ║");
+            System.out.println("║  4. Modificar jugador                 ║");
+            System.out.println("║  5. Mostrar todo                      ║");
+            System.out.println("║  6. Interfaces funcionales            ║");
+            System.out.println("║  7. Salir                             ║");
+            System.out.println("╚═══════════════════════════════════════╝");
             System.out.print("Selecciona una opción: ");
             // Lectura de la opción ingresada por el usuario.
             int opc = t.nextInt();
@@ -250,8 +253,21 @@ public class AppMejorada {
                     break;
 
                 case 6:
-                    continuar = false;
+                    
+                    int opcion = mostrarOpcionStream();
+
+                    if (opcion == 1) {
+                        equipoStream.agregarEquipoStream(equipoStream.generarEquipoAleatorio.get());
+                        equipoStream.mostrarEquipoStream();
+
+                    }
                     break;
+
+                case 7:
+
+                continuar = false;
+                    break;
+
                 default:
                     break;
             }// fin swicht
@@ -259,4 +275,18 @@ public class AppMejorada {
         } // fin while
         t.close();//crerramos el Scanner para que no nos aparesca en amarrillo una linea 
     }// fin funcion
+
+    @SuppressWarnings("resource")
+    public static int mostrarOpcionStream(){
+        Scanner t = new Scanner(System.in);
+        System.out.println();
+        System.out.println("Ingrese que desea ver: ");
+        System.out.println("1. Generar un equipo aleatoriamente");
+        System.out.println("2. Simulacion de una partido");
+
+        int opc = t.nextInt();
+
+        return opc;
+    }
+
 }

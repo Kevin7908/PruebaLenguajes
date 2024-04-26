@@ -4,7 +4,6 @@ import java.util.List;
 public class EquipoGenerico<T extends EquipoFutbol> {
     //Creamos una lista generica llamada equiposge
     private List<T> equiposge;
-    GestionarEquipos g = new GestionarEquipos();
     
     public EquipoGenerico() {
         //Su constructor en donde decimos que la lista va a ser de tipo ArrayList
@@ -34,5 +33,16 @@ public boolean agregarEquipoGenerico(T e) {
     public List<T> obtenerListaEquipos() {
         return equiposge;
     }   
+
+    public void mostrarEquipoGenerico(String equi, int num){
+        for (T equipo : equiposge) {
+            if (equipo.getEquipo().equals(equi) && equipo.getNumeroJugador() == num) {
+                System.out.println(equipo);
+                return;
+            }
+        }
+    }
+
+
 
 }
